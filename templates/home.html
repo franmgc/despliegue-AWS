@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+
+
+<div class="container mt-5">
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/610RGJlG1ZL._AC_UF1000,1000_QL80_.jpg" class="card-img-top" alt=".">
+
+      <div class="card-body">
+          <h5 class="card-title">Concierto de Pink Floyd</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+          <form method="POST" action="/comprar">
+              <!-- Campo oculto con un valor -->
+              <input type="hidden" name="campo_oculto" value="Pink Floyd">
+              <button type="submit" class="btn btn-primary">Comprar Entradas</button>
+          </form>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-5">
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/A1i7RW6NffL._UF894,1000_QL80_.jpg" class="card-img-top" alt=".">
+
+      <div class="card-body">
+          <h5 class="card-title">Concierto de Imagine Dragons</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+          <form method="POST" action="/comprar">
+              <!-- Campo oculto con un valor -->
+              <input type="hidden" name="campo_oculto" value="Imagine Dragons">
+              <button type="submit" class="btn btn-primary">Comprar Entradas</button>
+          </form>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-5">
+  <div class="card">
+    <img src="https://images.ecestaticos.com/ijAtVUOVsi9ER7NjcwIA_rF5BZ0=/56x0:1122x799/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2F821%2Fe50%2F7f8%2F821e507f8f22f37f583f07d225f13b38.jpg" class="card-img-top" alt=".">
+
+      <div class="card-body">
+          <h5 class="card-title">Concierto de Ariana Grande</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+          <form method="POST" action="/comprar">
+              <!-- Campo oculto con un valor -->
+              <input type="hidden" name="campo_oculto" value="Ariana Grande">
+              <button type="submit" class="btn btn-primary">Comprar Entradas</button>
+          </form>
+      </div>
+  </div>
+</div>
+
+
+
+<div class="container mt-5">
+  <div class="card">
+    <img src="https://m.media-amazon.com/images/I/61lMwNQGYbL._UF894,1000_QL80_.jpg" class="card-img-top" alt=".">
+
+      <div class="card-body">
+          <h5 class="card-title">Concierto de Adele</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+          <form method="POST" action="/comprar">
+              <!-- Campo oculto con un valor -->
+              <input type="hidden" name="campo_oculto" value="Adele">
+              <button type="submit" class="btn btn-primary">Comprar Entradas</button>
+          </form>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+{% endblock%}

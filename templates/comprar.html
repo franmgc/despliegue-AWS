@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Comprar entradas para {{ mensaje }}</h1>
+
+
+<div class="formulario_div">
+
+
+<form action="procesar_compra" method="POST">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required><br><br>
+
+    <label for="numero_entradas">Nº Entradas:</label>
+    <input type="number" id="numero_entradas" name="numero_entradas" min="1" required><br><br>
+
+    <form method="POST" action="procesar_compra">
+        <!-- Campo oculto con un valor -->
+        <input type="hidden" name="campo_oculto" value="{{mensaje}}">
+        <button type="submit" class="btn btn-primary">Comprar Entradas</button>
+    </form>
+
+    <!-- 
+
+    <label for="evento">Evento:</label>
+    <select id="evento" name="evento" required>
+        <option value="pfloyd">Pink Floyd</option>
+        <option value="idragons">Imagine Dragons</option>
+        <option value="agrande">Ariana Grande</option>
+        <option value="adele">Adele</option>
+    </select><br><br>
+    
+-->
+
+</form>
+    
+</div>
+{% endblock%}
