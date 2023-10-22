@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "layout.html" %}
+
+{% block content %}
+
+<h1>Descargar entradas a partir del número de seguimiento</h1>
+
+
+<div class="formulario_div">
+
+
+
+    <form action="/tickets" method="post">
+        <label for="campoTexto">Ingresa tu número de seguimiento:</label>
+        <input type="text" id="campoTexto" name="texto" placeholder="Escribe aquí" required>
+        <br>
+        <input type="submit" class="btn btn-primary" value="Descargar">
+    </form>
+
+
+    
+</div>
+{% endblock%}
