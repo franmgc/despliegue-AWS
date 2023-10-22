@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, redirect
 
 import json
 import uuid
@@ -21,6 +21,8 @@ URL_cola_hacia_back = myModuleAWS.crearSQS("ColaHaciaBack.fifo")
 URL_cola_hacia_front = "https://sqs.us-east-1.amazonaws.com/621668821568/ColaHaciaFront.fifo"
 
 sqs = boto3.client('sqs')
+nombre_bucket = "bucketholaentradas"
+
 
 ##############################################################
 ##############################################################
@@ -53,6 +55,30 @@ def comprar():
     evento = request.form['campo_oculto']
 
     return render_template("comprar.html", mensaje=evento)
+
+
+
+
+@app.route('/tickets', methods=['GET', 'POST'])
+def tickets():
+
+
+    if request.method == 'POST':
+
+        texto = request.form['texto']  # Acceder al valor del campo de texto
+
+        url_ticket = myModuleAWS.getURL(nombre_bucket, "ticket_"+texto+".pdf", 3600)
+
+
+        if texto != None:
+            print('Hola, el usuario escribio: ', texto)
+
+        return redirect(url_ticket)
+
+    if request.method == 'GET':
+
+        return render_template("tickets.html")
+
 
 
 
@@ -160,6 +186,6 @@ def procesar_compra():
 
 # Make sure this we are executing this file
 if __name__ == '__main__':
-    #app.run(debug=True)
-    app.run(host="0.0.0.0", port=8080)
+    app.run(debug=True)
+    #app.run(host="0.0.0.0", port=8080)
 
