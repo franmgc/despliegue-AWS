@@ -30,6 +30,12 @@ else:
 
 
 
+URL_cola_hacia_back = "https://sqs.us-east-1.amazonaws.com/621668821568/ColaHaciaBack.fifo"
+URL_cola_hacia_front = "https://sqs.us-east-1.amazonaws.com/621668821568/ColaHaciaFront.fifo"
+
+sqs = boto3.client('sqs')
+sqs.purge_queue(QueueUrl=URL_cola_hacia_front)
+sqs.purge_queue(QueueUrl=URL_cola_hacia_back)
 
 
 
